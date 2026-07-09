@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Премиальное портфолио веб-разработчика
 
-## Getting Started
+Темный премиальный сайт-портфолио для независимого full-stack веб-разработчика, который делает лендинги, MVP для стартапов, дашборды и бизнес-сайты.
 
-First, run the development server:
+## Стек
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS v4
+- Motion для контролируемых reveal-анимаций и CTA-взаимодействий
+- Phosphor Icons
+- Telegram deep link для отправки готового брифа
+
+## Структура
+
+```txt
+src/app
+  layout.tsx
+  page.tsx
+public/cases
+  auren-studio/
+  pulseops/
+  voltwear/
+  briefforge/
+  nova-advisory/
+src/components
+  sections/
+  ui/
+  contact-form.tsx
+  site-header.tsx
+src/data
+  content.ts
+src/lib
+  paths.ts
+  utils.ts
+```
+
+## Запуск
+
+Установите зависимости и запустите локальный сервер:
+
+```bash
+npm install
+npm run dev
+```
+
+Откройте [http://localhost:3000](http://localhost:3000).
+
+## Скрипты
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
+npm run preview
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run dev` удобен для разработки главной страницы. Для проверки статических сайтов кейсов используйте `npm run build && npm start`, потому что GitHub Pages будет раздавать уже собранную папку `out/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Контактная форма
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Форма валидирует поля на клиенте, собирает готовый текст брифа и открывает Telegram-чат `@ekyousuk` через deep link. Поля остаются на сайте, но сообщение пользователь отправляет вручную уже в Telegram.
 
-## Learn More
+## Статические сайты кейсов
 
-To learn more about Next.js, take a look at the following resources:
+Карточки в блоке "Избранные работы" ведут напрямую на статические сайты:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```txt
+/cases/auren-studio/
+/cases/pulseops/
+/cases/voltwear/
+/cases/briefforge/
+/cases/nova-advisory/
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Каждая папка внутри `public/cases/` содержит `index.html`, `styles.css`, `script.js` и `assets/`. Чтобы заменить заглушку на реальный проект, достаточно положить финальные HTML/CSS/JS файлы в нужную папку.
 
-## Deploy on Vercel
+## Контент
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Кейсы, услуги, этапы процесса, группы стека и варианты формы находятся в `src/data/content.ts`. Их можно заменить реальными работами или позже расширить до отдельных страниц проектов.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Деплой
+
+Проект настроен на статический экспорт Next.js и подходит для GitHub Pages. Команда `npm run build` создает папку `out/`.
+
+Для пользовательского сайта `https://coreformdev.github.io/` дополнительный base path не нужен:
+
+```bash
+npm run build
+```
+
+Если репозиторий будет опубликован как project page, например `https://username.github.io/portfolio-sites/`, собирайте с переменной:
+
+```bash
+GITHUB_PAGES_BASE_PATH=/portfolio-sites npm run build
+```
