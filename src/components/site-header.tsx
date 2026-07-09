@@ -15,7 +15,7 @@ export function SiteHeader() {
           className="font-mono text-[0.78rem] font-medium tracking-[0.14em] text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-200"
           aria-label="К началу страницы"
         >
-          DEV/STUDIO
+          coreform
         </a>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Основная навигация">
