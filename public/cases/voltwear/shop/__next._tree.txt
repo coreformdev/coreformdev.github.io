@@ -1,0 +1,5 @@
+:HL["/cases/voltwear/_next/static/chunks/10f.~syi.h7dm.css","style"]
+:HL["/cases/voltwear/_next/static/media/0c89a48fa5027cee-s.p.0rd3rjvnnhw7n.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/cases/voltwear/_next/static/media/6ad1cda2f16975ee-s.p.0t8o_f0a-dk8w.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/cases/voltwear/_next/static/media/87ccb897ba116d44-s.p.01qprxas5cq-q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"shop","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"xJjiAsTvYFIuMT3cfde2u"}
