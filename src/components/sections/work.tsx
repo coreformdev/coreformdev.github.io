@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 import { selectedWork } from "@/data/content";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -46,6 +47,30 @@ function CasePreview({ index }: { index: number }) {
               <div className="h-10 rounded-lg bg-white/[0.12]" />
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (index === 3) {
+    return (
+      <div className="relative h-full min-h-56 overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#e8dece]">
+        <Image
+          src={withBasePath("/cases/sstrs/images/hero.png")}
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.03]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4">
+          <div>
+            <p className="font-serif text-2xl italic text-white">о, сестра!</p>
+            <p className="mt-1 text-xs text-white/65">студия заботы · клуб «Выдох»</p>
+          </div>
+          <span className="rounded-full border border-white/25 bg-black/20 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.12em] text-white backdrop-blur-md">
+            SSTRS
+          </span>
         </div>
       </div>
     );
