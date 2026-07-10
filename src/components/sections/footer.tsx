@@ -2,7 +2,7 @@ import { navItems } from "@/data/content";
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/" },
-  { label: "Telegram", href: "https://t.me/ekyousuk" },
+  { label: "Telegram", href: "https://t.me/coreformdev" },
   { label: "Почта", href: "mailto:hello@example.com" },
 ];
 

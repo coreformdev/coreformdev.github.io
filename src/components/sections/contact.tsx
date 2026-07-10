@@ -1,6 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/ui/reveal";
-import { MagneticButton } from "@/components/ui/magnetic-button";
 
 export function ContactSection() {
   return (
@@ -14,9 +13,6 @@ export function ContactSection() {
             <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
               Отправьте короткий бриф, и я помогу превратить его в понятный, аккуратный и функциональный веб-продукт.
             </p>
-            <div className="mt-8">
-              <MagneticButton href="#contact">Начать проект</MagneticButton>
-            </div>
           </div>
         </Reveal>
         <Reveal delay={0.08}>

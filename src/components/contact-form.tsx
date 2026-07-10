@@ -6,7 +6,7 @@ import { budgetRanges, projectTypes } from "@/data/content";
 
 type SubmitState = "idle" | "success" | "error";
 
-const telegramUsername = "ekyousuk";
+const telegramUsername = "coreformdev";
 
 const initialForm = {
   name: "",
