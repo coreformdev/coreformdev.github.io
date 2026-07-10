@@ -142,6 +142,14 @@ export function WorkSection() {
                     <p className="mt-4 max-w-xl text-sm leading-6 text-zinc-400 sm:text-base">
                       {work.description}
                     </p>
+                    <div className="mt-5 inline-flex items-center gap-2.5 rounded-2xl border border-amber-200/20 bg-amber-200/[0.06] px-3.5 py-2">
+                      <span className="text-base font-semibold tracking-tight text-amber-100">
+                        {work.metric}
+                      </span>
+                      <span className="text-xs leading-4 text-zinc-400">
+                        {work.metricLabel}
+                      </span>
+                    </div>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {work.tags.map((tag) => (
                         <span

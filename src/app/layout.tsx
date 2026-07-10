@@ -13,13 +13,13 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://coreformdev.github.io"),
   title: {
-    default: "Независимый веб-разработчик | Премиальные сайты, MVP и дашборды",
-    template: "%s | Независимый веб-разработчик",
+    default: "coreform | Сайты, MVP и дашборды под ключ",
+    template: "%s | coreform",
   },
   description:
-    "Премиальные лендинги, MVP для стартапов, дашборды и бизнес-сайты с сильным дизайном, настоящим бэкендом и чистой архитектурой.",
+    "Премиальные лендинги, MVP для стартапов, дашборды и бизнес-сайты, которые приводят клиентов. Сильный дизайн, настоящий бэкенд, запуск от 1 недели. Фиксированная цена и сроки.",
   keywords: [
     "веб-разработчик",
     "премиальные лендинги",
@@ -32,17 +32,27 @@ export const metadata: Metadata = {
   authors: [{ name: "Независимый веб-разработчик" }],
   creator: "Независимый веб-разработчик",
   openGraph: {
-    title: "Премиальные сайты, MVP и дашборды",
+    title: "Сайты, MVP и дашборды, которые приводят клиентов",
     description:
-      "Независимый веб-разработчик, который делает веб-продукты, готовые к реальной эксплуатации: сильный фронтенд, настоящий бэкенд и чистая архитектура.",
+      "Премиальные веб-продукты под ключ: сильный дизайн, настоящий бэкенд и запуск от 1 недели.",
     type: "website",
     locale: "ru_RU",
+    siteName: "coreform",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "coreform — сайты, MVP и дашборды под ключ",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Премиальные сайты, MVP и дашборды",
+    title: "Сайты, MVP и дашборды, которые приводят клиентов",
     description:
-      "Веб-продукты, готовые к реальной эксплуатации, с сильным дизайном, настоящим бэкендом и чистой архитектурой.",
+      "Премиальные веб-продукты под ключ: сильный дизайн, настоящий бэкенд и запуск от 1 недели.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -54,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${manrope.variable} ${jetBrainsMono.variable} h-full scroll-smooth antialiased`}
+      className={`${manrope.variable} ${jetBrainsMono.variable} h-full scroll-smooth bg-background antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

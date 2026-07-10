@@ -4,12 +4,14 @@
   --background: #07080b;
   --foreground: #f4f7fb;
   --accent: #8fd8ff;
+  --accent-warm: #ffc785;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-warm: var(--accent-warm);
   --font-sans: var(--font-sans-custom);
   --font-mono: var(--font-mono-custom);
 }

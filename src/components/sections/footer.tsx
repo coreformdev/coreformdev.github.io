@@ -1,10 +1,4 @@
-import { navItems } from "@/data/content";
-
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "Telegram", href: "https://t.me/coreformdev" },
-  { label: "Почта", href: "mailto:hello@example.com" },
-];
+import { navItems, socialLinks } from "@/data/content";
 
 export function Footer() {
   return (
@@ -12,10 +6,10 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="font-mono text-sm font-medium tracking-[0.14em] text-white">
-            DEV/STUDIO
+            coreform
           </p>
           <p className="mt-3 text-sm text-zinc-500">
-            Премиальные сайты, MVP и дашборды.
+            Премиальные сайты, MVP и дашборды под ключ.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -44,7 +38,7 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-10 max-w-6xl text-sm text-zinc-600">
-        © {new Date().getFullYear()} DEV/STUDIO. Все права защищены.
+        © {new Date().getFullYear()} coreform. Все права защищены.
       </div>
     </footer>
   );

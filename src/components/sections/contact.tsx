@@ -1,5 +1,12 @@
+import { ArrowUpRight, PaperPlaneTilt, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/ui/reveal";
+import { contactMethods } from "@/data/content";
+
+const methodIcons = {
+  Telegram: PaperPlaneTilt,
+  Почта: EnvelopeSimple,
+} as const;
 
 export function ContactSection() {
   return (
@@ -11,8 +18,37 @@ export function ContactSection() {
               Есть проект на горизонте?
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
-              Отправьте короткий бриф, и я помогу превратить его в понятный, аккуратный и функциональный веб-продукт.
+              Опишите задачу в двух словах — за 20 минут разберём цель и я скажу срок и цену. Первая консультация бесплатна и ни к чему не обязывает.
             </p>
+
+            <div className="mt-8 grid gap-3">
+              {contactMethods.map((method) => {
+                const Icon = methodIcons[method.label as keyof typeof methodIcons];
+                return (
+                  <a
+                    key={method.label}
+                    href={method.href}
+                    className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-zinc-950/45 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-sky-100/35 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-200"
+                  >
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.045] text-sky-100">
+                      <Icon size={20} />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-semibold text-white">
+                        {method.value}
+                      </span>
+                      <span className="block truncate text-xs text-zinc-500">
+                        {method.hint}
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      size={18}
+                      className="shrink-0 text-zinc-500 transition duration-300 group-hover:text-sky-100"
+                    />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </Reveal>
         <Reveal delay={0.08}>

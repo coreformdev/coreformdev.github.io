@@ -1,6 +1,7 @@
 import { ArrowDownRight, BracketsCurly, Database, RocketLaunch } from "@phosphor-icons/react/dist/ssr";
 import { HeroReveal } from "@/components/ui/reveal";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { stats } from "@/data/content";
 
 const heroCards = [
   { title: "Лендинг", meta: "визуальная система", icon: BracketsCurly },
@@ -18,37 +19,48 @@ export function HeroSection() {
       <div className="mx-auto grid min-h-[calc(100dvh-6rem)] max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.28fr_0.72fr] lg:py-10 xl:grid-cols-[1.38fr_0.72fr]">
         <div className="max-w-4xl">
           <HeroReveal>
-            <p className="mb-5 inline-flex rounded-full border border-white/10 bg-white/[0.045] px-4 py-2 font-mono text-[0.72rem] font-medium uppercase tracking-[0.18em] text-sky-100">
-              Независимый веб-разработчик
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-4 py-2 font-mono text-[0.72rem] font-medium uppercase tracking-[0.18em] text-sky-100">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300/70" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-300" />
+              </span>
+              Свободен для 1-2 проектов в этом месяце
             </p>
           </HeroReveal>
 
           <HeroReveal delay={0.08}>
-            <h1 className="max-w-[13ch] text-balance text-4xl font-semibold leading-[0.98] tracking-tight text-white sm:text-6xl lg:max-w-[15ch] lg:text-[4.05rem] xl:text-[4.55rem]">
-              Премиальные сайты, MVP и дашборды с сильным дизайном и настоящим бэкендом.
+            <h1 className="max-w-[16ch] text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:max-w-[17ch] lg:text-[3.9rem] xl:text-[4.35rem]">
+              Сайты и веб-продукты, которые{" "}
+              <span className="text-sky-100">приводят клиентов</span>, а не просто красиво выглядят.
             </h1>
           </HeroReveal>
 
           <HeroReveal delay={0.16}>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-zinc-300 sm:text-lg">
-              Помогаю основателям и небольшим командам быстро запускать аккуратные веб-продукты, готовые к реальным пользователям.
+              Премиальные лендинги, MVP и дашборды под ключ: сильный дизайн, настоящий бэкенд и запуск от 1 недели. Фиксированная цена и сроки — до старта работы.
             </p>
           </HeroReveal>
 
           <HeroReveal delay={0.24}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <MagneticButton href="#work">Смотреть работы</MagneticButton>
-              <MagneticButton href="#contact" variant="secondary">
-                Начать проект
+              <MagneticButton href="#contact">Обсудить проект бесплатно</MagneticButton>
+              <MagneticButton href="#work" variant="secondary">
+                Смотреть работы
               </MagneticButton>
             </div>
           </HeroReveal>
 
           <HeroReveal delay={0.32}>
-            <div className="mt-7 grid max-w-xl grid-cols-2 gap-2 font-mono text-xs text-zinc-500 sm:flex sm:flex-wrap sm:gap-3">
-              <span>Фронтенд · Бэкенд</span>
-              <span>Архитектура · Деплой</span>
-            </div>
+            <dl className="mt-10 grid max-w-xl grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-7 sm:grid-cols-4">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-2xl font-semibold tracking-tight text-white">
+                    {stat.value}
+                  </dt>
+                  <dd className="mt-1 text-xs leading-4 text-zinc-500">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
           </HeroReveal>
         </div>
 
@@ -58,8 +70,8 @@ export function HeroSection() {
             <div className="relative overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.055] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
               <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
-                  <p className="text-sm font-medium text-white">Открыт для выборочных проектов.</p>
-                  <p className="mt-1 text-xs text-zinc-500">Коммерческие веб-продукты</p>
+                  <p className="text-sm font-medium text-white">Отвечаю в течение пары часов</p>
+                  <p className="mt-1 text-xs text-zinc-500">Первая консультация — бесплатно</p>
                 </div>
                 <ArrowDownRight size={22} className="text-sky-100" />
               </div>
